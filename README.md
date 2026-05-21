@@ -20,17 +20,18 @@ Calculation method: For each output position (i, j): region = padded[i*S : i*S+K
 Edge detection: Define Sobel X (vertical edge) and Sobel Y (horizontal edge) convolution kernels (3x3), respectively call my_conv2d, and output two feature maps. Use matplotlib to plot: original image vs vertical edge map vs horizontal edge map.
 Implement the Max Pooling (maximum pooling) function my_maxpool2d(img, kernel_size=2, stride=2). The logic is the same as convolution, but no padding (default), and no weights. Window operation is changed to find the maximum value: out[i, j] = np.max(region).
 
-实验 手写卷积算子
+# 实验 手写卷积算子
 
-实验目标：
+## 实验目标：
 掌握维度计算，理解卷积操作中 Padding（填充）、Stride（步长）对输出尺寸的影响。
 实现2D卷积，不调用深度学习框架，仅用 Numpy 切片和循环实现 conv2d 前向传播。
 应用 Sobel 核观察边缘特征提取。
 实现Max Pooling，理解下采样过程。
 
-实验数据：使用 scipy.datasets (或 skimage) 内置经典图像 ascent (或 camera)。预处理：resize 至 (128, 128)以加速计算，转 float32并归一化至 [0, 1] 区间。
+## 实验数据：
+使用 scipy.datasets (或 skimage) 内置经典图像 ascent (或 camera)。预处理：resize 至 (128, 128)以加速计算，转 float32并归一化至 [0, 1] 区间。
 
-实验内容：
+## 实验内容：
 使用 np.pad(img, ((P, P), (P, P)), 'constant') 对原图进行零填充。
 实现 2D 卷积函数，my_conv2d(img, kernel, stride=1, padding=0)。
 输入：img (H,W), kernel (K,K)。
